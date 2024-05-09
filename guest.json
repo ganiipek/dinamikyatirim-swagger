@@ -105,18 +105,7 @@
                 "responses": {}
             }
         },
-        "/post/{id}": {
-            "get": {
-                "tags": [
-                    "Post"
-                ],
-                "summary": "Get Post by ID",
-                "security": [],
-                "parameters": [],
-                "responses": {}
-            }
-        },
-        "/post/{slug}": {
+        "/posts/{slug}": {
             "get": {
                 "tags": [
                     "Post"
@@ -127,7 +116,7 @@
                 "responses": {}
             }
         },
-        "/post-categories": {
+        "/posts/categories": {
             "get": {
                 "tags": [
                     "Post"
@@ -138,12 +127,12 @@
                 "responses": {}
             }
         },
-        "/post-category/{id}": {
+        "/posts/categories/{slug}": {
             "get": {
                 "tags": [
                     "Post"
                 ],
-                "summary": "Get Post categories by ID",
+                "summary": "Get Post categories by Slug",
                 "security": [],
                 "parameters": [],
                 "responses": {}
@@ -155,17 +144,6 @@
                     "Campaign"
                 ],
                 "summary": "Get All Campaigns",
-                "security": [],
-                "parameters": [],
-                "responses": {}
-            }
-        },
-        "/campaign/{id}": {
-            "get": {
-                "tags": [
-                    "Campaign"
-                ],
-                "summary": "Get Campaign by ID",
                 "security": [],
                 "parameters": [],
                 "responses": {}
@@ -193,7 +171,7 @@
                 "responses": {}
             }
         },
-        "/contact": {
+        "/contacts": {
             "post": {
                 "tags": [
                     "Contact"
@@ -204,7 +182,7 @@
                 "responses": {}
             }
         },
-        "/contact-categories": {
+        "/contacts/categories": {
             "get": {
                 "tags": [
                     "Contact"
