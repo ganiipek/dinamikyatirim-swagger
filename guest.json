@@ -13,7 +13,11 @@
   },
   "servers": [
     {
-      "url": "http://localhost:8010",
+      "url": "http://94.130.186.18:3000/api/backoffice",
+      "description": "Development Server"
+    },
+    {
+      "url": "http://localhost:3000/api/backoffice",
       "description": "Local Server"
     }
   ],
