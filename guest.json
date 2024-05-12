@@ -1,218 +1,246 @@
 {
-    "openapi": "3.0.3",
-    "info": {
-        "version": "1.0.0",
-        "title": "Dinamik Yatirim Guest API",
-        "description": "The swagger integration for Dinamik Yatirim",
-        "contact": {
-            "name": "24 Capital IT Team"
-        },
-        "license": {
-            "name": "MIT"
-        }
+  "openapi": "3.0.3",
+  "info": {
+    "version": "1.0.0",
+    "title": "Dinamik Yatirim Guest API",
+    "description": "The swagger integration for Dinamik Yatirim",
+    "contact": {
+      "name": "24 Capital IT Team"
     },
-    "servers": [
-        {
-            "url": "http://localhost:8010",
-            "description": "Local Server"
-        }
-    ],
-    "components": {
-        "schemas": {
-            "200": {
-                "type": "object",
-                "properties": {
-                    "status": {
-                        "type": "string",
-                        "default": "success"
-                    },
-                    "status_code": {
-                        "type": "integer",
-                        "default": 200
-                    },
-                    "reason": {
-                        "type": "string",
-                        "default": ""
-                    },
-                    "reason_message": {
-                        "type": "string",
-                        "default": ""
-                    },
-                    "data": {
-                        "type": "object",
-                        "properties": {
-                            "email": {
-                                "type": "string"
-                            },
-                            "id": {
-                                "type": "string"
-                            },
-                            "access_token": {
-                                "type": "string"
-                            },
-                            "refresh_token": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            },
-            "400": {
-                "type": "object",
-                "properties": {
-                    "status": {
-                        "type": "string",
-                        "default": "error"
-                    },
-                    "status_code": {
-                        "type": "integer",
-                        "default": 400
-                    },
-                    "reason": {
-                        "type": "string",
-                        "default": ""
-                    },
-                    "reason_message": {
-                        "type": "string",
-                        "default": ""
-                    },
-                    "data": {
-                        "type": "object",
-                        "properties": {
-                            "service": {
-                                "type": "string"
-                            },
-                            "method": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "tags": [
-    ],
-    "paths":{
-        "/posts": {
-            "get": {
-                "tags": [
-                    "Post"
-                ],
-                "summary": "Get All Posts",
-                "security": [],
-                "parameters": [],
-                "responses": {}
-            }
-        },
-        "/posts/{slug}": {
-            "get": {
-                "tags": [
-                    "Post"
-                ],
-                "summary": "Get Post by Slug",
-                "security": [],
-                "parameters": [],
-                "responses": {}
-            }
-        },
-        "/posts/categories": {
-            "get": {
-                "tags": [
-                    "Post"
-                ],
-                "summary": "Get All Post categories",
-                "security": [],
-                "parameters": [],
-                "responses": {}
-            }
-        },
-        "/posts/categories/{slug}": {
-            "get": {
-                "tags": [
-                    "Post"
-                ],
-                "summary": "Get Post categories by Slug",
-                "security": [],
-                "parameters": [],
-                "responses": {}
-            }
-        },
-        "/campaigns": {
-            "get": {
-                "tags": [
-                    "Campaign"
-                ],
-                "summary": "Get All Campaigns",
-                "security": [],
-                "parameters": [],
-                "responses": {}
-            }
-        },
-        "/campaign/{slug}": {
-            "get": {
-                "tags": [
-                    "Campaign"
-                ],
-                "summary": "Get Campaign by Slug",
-                "security": [],
-                "parameters": [],
-                "responses": {}
-            }
-        },
-        "/economic-calendars": {
-            "get": {
-                "tags": [
-                    "Economic Calendar"
-                ],
-                "summary": "Get All Economic Calendars",
-                "security": [],
-                "parameters": [],
-                "responses": {}
-            }
-        },
-        "/contacts": {
-            "post": {
-                "tags": [
-                    "Contact"
-                ],
-                "summary": "Contact Us",
-                "security": [],
-                "parameters": [],
-                "responses": {}
-            }
-        },
-        "/contacts/categories": {
-            "get": {
-                "tags": [
-                    "Contact"
-                ],
-                "summary": "Get All Contact Categories",
-                "security": [],
-                "parameters": [],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json:": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/200"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json:": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/400"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    "license": {
+      "name": "MIT"
     }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8010",
+      "description": "Local Server"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "200": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "success"
+          },
+          "status_code": {
+            "type": "integer",
+            "default": 200
+          },
+          "reason": {
+            "type": "string",
+            "default": ""
+          },
+          "reason_message": {
+            "type": "string",
+            "default": ""
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "access_token": {
+                "type": "string"
+              },
+              "refresh_token": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "400": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "error"
+          },
+          "status_code": {
+            "type": "integer",
+            "default": 400
+          },
+          "reason": {
+            "type": "string",
+            "default": ""
+          },
+          "reason_message": {
+            "type": "string",
+            "default": ""
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "service": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [],
+  "paths": {
+    "/posts": {
+      "get": {
+        "tags": ["Post"],
+        "summary": "Get All Posts",
+        "security": [],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/posts/{slug}": {
+      "get": {
+        "tags": ["Post"],
+        "summary": "Get Post by Slug",
+        "security": [],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/posts/categories": {
+      "get": {
+        "tags": ["Post"],
+        "summary": "Get All Post categories",
+        "security": [],
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/posts/categories/{slug}": {
+      "get": {
+        "tags": ["Post"],
+        "summary": "Get Post categories by slug",
+        "security": [],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/posts/categories/{slug}/posts": {
+      "get": {
+        "tags": ["Post"],
+        "summary": "Get Post categories by Slug",
+        "security": [],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/economic-calendars": {
+      "get": {
+        "tags": ["Economic Calendar"],
+        "summary": "Get All Economic Calendars",
+        "security": [],
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/contacts": {
+      "post": {
+        "tags": ["Contact"],
+        "summary": "Contact Us",
+        "security": [],
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/contacts/categories": {
+      "get": {
+        "tags": ["Contact"],
+        "summary": "Get All Contact Categories",
+        "security": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json:": {
+                "schema": {
+                  "$ref": "#/components/schemas/200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json:": {
+                "schema": {
+                  "$ref": "#/components/schemas/400"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
