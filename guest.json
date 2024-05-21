@@ -13,11 +13,11 @@
   },
   "servers": [
     {
-      "url": "http://94.130.186.18:3000/api/backoffice",
+      "url": "http://94.130.186.18:3000/api",
       "description": "Development Server"
     },
     {
-      "url": "http://localhost:3000/api/backoffice",
+      "url": "http://localhost:3000/api",
       "description": "Local Server"
     }
   ],
@@ -133,7 +133,7 @@
         "parameters": [
           {
             "name": "slug",
-            "in": "query",
+            "in": "path",
             "required": true,
             "schema": {
               "type": "string"
@@ -160,7 +160,7 @@
         "parameters": [
           {
             "name": "slug",
-            "in": "query",
+            "in": "path",
             "required": true,
             "schema": {
               "type": "string"
@@ -178,7 +178,7 @@
         "parameters": [
           {
             "name": "skip",
-            "in": "query",
+            "in": "path",
             "required": false,
             "schema": {
               "type": "integer",
@@ -198,12 +198,48 @@
         "responses": {}
       }
     },
-    "/economic-calendars": {
+    "/pages/{slug}": {
       "get": {
-        "tags": ["Economic Calendar"],
-        "summary": "Get All Economic Calendars",
+        "tags": ["Page"],
+        "summary": "Get detailed page content by slug",
+        "security": [],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/pages/categories": {
+      "get": {
+        "tags": ["Page"],
+        "summary": "Get category detail (Subcategory included)",
         "security": [],
         "parameters": [],
+        "responses": {}
+      }
+    },
+    "/pages/categories/{slug}": {
+      "get": {
+        "tags": ["Page"],
+        "summary": "Get detailed page categories by slug",
+        "security": [],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {}
       }
     },
