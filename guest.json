@@ -177,6 +177,14 @@
         "security": [],
         "parameters": [
           {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "skip",
             "in": "path",
             "required": false,
@@ -248,7 +256,32 @@
         "tags": ["Contact"],
         "summary": "Contact Us",
         "security": [],
-        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+              "application/json": {
+                  "schema": {
+                      "properties": {
+                          "name": {
+                              "type": "string"
+                          },
+                          "phone": {
+                              "type": "string"
+                          },
+                          "email": {
+                              "type": "string"
+                          },
+                          "message": {
+                              "type": "string"
+                          },
+                          "category_id": {
+                              "type": "integer"
+                          }
+                      }
+                  }
+              }
+          }
+      },
         "responses": {}
       }
     },
@@ -280,6 +313,28 @@
             }
           }
         }
+      }
+    },
+    "/newsletters": {
+      "post": {
+        "tags": ["Newsletter"],
+        "summary": "Subscribe Newsletter",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+              "application/json": {
+                  "schema": {
+                      "properties": {
+                          "email": {
+                              "type": "string"
+                          }
+                      }
+                  }
+              }
+          }
+      },
+        "responses": {}
       }
     }
   }
